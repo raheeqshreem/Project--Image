@@ -14,13 +14,10 @@ describe('Test image processing utility', () => {
     const width = 100;
     const height = 100;
 
-    // استدعاء الدالة
     await resizeImage(sourcePath, outputPath, width, height);
 
-    // التحقق من أن الملف تم إنشاؤه
     expect(fs.existsSync(outputPath)).toBeTrue();
 
-    // (اختياري) حذف الملف بعد الاختبار للحفاظ على نظافة المجلد
     if (fs.existsSync(outputPath)) {
       fs.unlinkSync(outputPath);
     }
@@ -30,7 +27,6 @@ describe('Test image processing utility', () => {
     const sourcePath = path.resolve(__dirname, 'nonexistent.jpg');
     const outputPath = path.resolve(__dirname, 'output.jpg');
 
-    // نتوقع أن تفشل الدالة
     await expectAsync(resizeImage(sourcePath, outputPath, 100, 100)).toBeRejected();
   });
 });

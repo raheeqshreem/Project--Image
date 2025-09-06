@@ -5,7 +5,6 @@ const request = supertest(app);
 
 describe('Test API endpoints', () => {
   it('gets the /api/images endpoint and returns 200 for a valid request', async () => {
-    // تأكد من وجود صورة اسمها "fjord.jpg" في مجلد assets/full
     const response = await request.get('/api/images?filename=fjord&width=200&height=200');
     expect(response.status).toBe(200);
   });

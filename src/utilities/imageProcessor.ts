@@ -1,6 +1,5 @@
 import sharp from 'sharp';
 
-// دالة لتغيير حجم الصورة
 export const resizeImage = async (
   sourcePath: string,
   outputPath: string,
